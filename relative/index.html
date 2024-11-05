@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative</title>
+  </head>
+  <body>
+    <h2>Relative</h2>
+    <button onclick="back()">Back</button>
+    <button onclick="printParent()">Print Parent</button>
+
+    <script>
+      function back() {
+        window.history.back();
+      }
+
+      function printParent() {
+        console.log('window.opener');
+        console.log(window.opener);
+        console.log('window.parent.document');
+        console.log(window.parent.document);
+      }
+    </script>
+  </body>
+</html>
