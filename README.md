@@ -1,4 +1,4 @@
-# React Plugin Test with SDK Installed
+# React Plugin Test with SDK Global
 
 ## Dev Setup
 

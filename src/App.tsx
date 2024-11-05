@@ -1,21 +1,4 @@
 import './app.css';
-import { useContext } from 'react';
-import { FrontContext } from './providers/frontContext';
-// import Front from '@frontapp/plugin-sdk';
-
-// Methods to open a link
-// Type of URLS
-// - URLs with different protocols than http
-// Environments
-// - In the desktop app
-// - In a web browser
-// For all the combination, I would like to know:
-// - Does it work?
-// - If not, what error is thrown?
-// - What does the new page has access to
-//   - Can it access its opener?
-//   - Can it access its parent?
-//   - Can it escape the sandbox defined by the iframe?
 
 const APP_BASE_URL = '/plugin-test-sdk-global/';
 const TARGET_COMBINATIONS = ['_self', '_blank', '_parent', '_top'];
@@ -23,8 +6,6 @@ const RELATIVE_HREF = `${APP_BASE_URL}relative/`;
 const DIFFERENT_DOMAIN_HREF = 'https://example.com';
 
 export function App() {
-  const frontContext = useContext(FrontContext);
-
   function renderAnchorLinks(href: string, title: string) {
     return (
       <div>
@@ -86,13 +67,13 @@ export function App() {
         <p>{`const url = "${href}"`}</p>
         <ul>
           <li>
-            <button onClick={() => frontContext?.openUrl(href)}>
-              frontContext.openUrl(url)
+            <button onClick={() => Front.openUrl(href)}>
+              Front.openUrl(url)
             </button>
           </li>
           <li>
-            <button onClick={() => frontContext?.openUrlInPopup(href, {})}>
-              frontContext.openUrlInPopup(url, {`{}`})
+            <button onClick={() => Front.openUrlInPopup(href, {})}>
+              Front.openUrlInPopup(url, {`{}`})
             </button>
           </li>
         </ul>
@@ -100,13 +81,6 @@ export function App() {
     );
   }
 
-  // if (frontContext == null) {
-  //   return (
-  //     <div>
-  //       <p>Connecting to the Front context.</p>
-  //     </div>
-  //   );
-  // }
   return (
     <div className="app">
       <h1>Plugin Test with SDK global</h1>

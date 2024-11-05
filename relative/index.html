@@ -17,9 +17,11 @@
 
       function printParent() {
         console.log('window.opener');
-        console.log(window.opener);
+        console.log(opener);
+        opener?.console.log('Run JS');
         console.log('window.parent.document');
-        console.log(window.parent.document);
+        console.log(parent);
+        parent?.console.log('Run JS');
       }
     </script>
   </body>
